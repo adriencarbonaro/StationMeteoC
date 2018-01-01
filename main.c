@@ -51,19 +51,18 @@ int main()
       scanf("%s", lien);
       printf("Le nom de votre site est %s \n", lien);
       const char* url = lien;
-      struct hostent* host = gethostbyname(url);
+      struct hostent* host = gethostbyname(url); // On récupère l'url
       SOCKADDR_IN sin;
       bcopy(host->h_addr, &(sin.sin_addr), host->h_length); // erreur inexpliquée mais programme marche
       sin.sin_family= AF_INET;
       sin.sin_port= htons(PORT);
-      //pas besoin de bind, j attaque le connect
+      //pas besoin de bind
       if(connect(sock, (SOCKADDR*)&sin, sizeof sin)!= -1)
       {
          printf("connexion établie ! \n");
          printf("--------\n");
          printf("REQUETE :\n\n");
-         //j envoie ma requete
-         //if(send(sock, "GET / HTTP 1.0\n\n", 20,0)!=-1)//
+         // On crée la requette
          char* buf = "GET / HTTP/1.1\r\nHost: www.perdu.com\r\n\r\n";
          puts(buf);
          printf("--------\n");
