@@ -1,41 +1,41 @@
-//---------------------------------------------------------------------------
-// Requete HTTP en C - Rev 0.3
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
+// Requete HTTP en C - Rev 1.0
+//-----------------------------------------------------------------------------------------------------------------
 // Fichiers :  - main.c
 //             - fonctions .h
 //             - fonctions.c
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 // Crée une requette vers le site www.perdu.com
 // et lit affiche la réponse du site
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 // Ressources C : Sockets
 // Liens utiles : http://broux.developpez.com/articles/c/sockets/
-//                https://openclassrooms.com/courses/les-requetes-http         
-//---------------------------------------------------------------------------
+//                https://openclassrooms.com/courses/les-requetes-http  
+//                https://openclassrooms.com/forum/sujet/envoyer-une-chaine-de-caractere-63149
+//                https://openclassrooms.com/courses/apprenez-a-programmer-en-c/lire-et-ecrire-dans-des-fichiers       
+//-----------------------------------------------------------------------------------------------------------------
 // Rev 0.1 :   - On demande le site à l'utilisateur
 //             - On affiche la requette
 //             - On affiche la réponse et le contenu
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 // Rev 0.2 :   - Création d'une fonction pour créer la requette
 //               en fonction de l'url de l'utilisateur
 //             - Possibilité de mettre un code à la requete 
 //               pour faire des requetes avec paramètres
 //               ex : 192.168.1.17/?M
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 // Rev 0.3 :   - Créations de différentes fonctions
 //               pour mieux découper le programme
 //             - Création de différents fichiers pour ranger ces fonctions
 //             - Blindage du code de requete demandé
 //             - Enregistrement de la trame dans une variable 
 //               pour l'utiliser plus tard
-//---------------------------------------------------------------------------
-// Rev 1.0 :   - Fichiers ???
-// A faire :   - Sortir l'acquisition de la trame de la fonction d'affichage
-//             -> Créer une fonction d'acquisition
-//---------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
+// Rev 1.0 :   - Enregistrement de la trame dans un fichier texte
+//-----------------------------------------------------------------------------------------------------------------
 // Auteur      : Adrien CARBONARO
-// Mise à jour : 02/01/2018 - 19:39
-//---------------------------------------------------------------------------
+// Mise à jour : 05/01/2018 - 10:26
+//-----------------------------------------------------------------------------------------------------------------
 
 // Fichier contenant tous les prototypes de fonctions
 // et les définitions de préprocesseur
