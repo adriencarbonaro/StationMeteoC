@@ -58,13 +58,17 @@ int main(int argc, char const *argv[])
       int i=0;
       char* trame = NULL;
       
+      
       printf("Entrez le nom d'un site : ");
       fgets(lien, sizeof(lien), stdin); // On récupère l'entrée au clavier
       clean(lien, stdin); // On nettoie le flux d'entrée clavier
+            
+      
       if(strcmp(lien, "192.168.1.17") == 0){
          demanderCode(code, codes_trames); // On demande le code à l'utilisateur en blindant
       }
-
+      
+      
       const char* url = lien;
       struct hostent* host = gethostbyname(url);
       SOCKADDR_IN sin;

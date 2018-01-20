@@ -172,7 +172,7 @@ void afficherReponse(char* trame, char* rep){
 FILE* initFichier(){
   
   FILE* fichier = NULL;
-  fichier = fopen("test.txt", "a+");
+  fichier = fopen("Trames.txt", "a+");
   
   if(fichier != NULL)
   {
