@@ -18,51 +18,21 @@
 // Mise à jour : 20/01/2018 - 23:02
 //*****************************************************************************************************************
 
+include ('bdd/bddconnect.php');
+include ('fonctions.php');
 
 //header('Content-Type: text/plain');
  
-// Addresse de la Station Météo sur le réseau local
-$name = '192.168.1.17';
- 
-//****************************
-// Requete 
-//****************************
-// ?M car on veut récupérer
-// la trame M
-//****************************
-$envoi  = "GET /?M HTTP/1.1\r\n";
-$envoi .= "Host: ".$name."\r\n\r\n"; // On doit finir la requete par \r\n\r\n
- 
-//******************
-// ouverture socket
-//******************
-$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-if($socket < 0){
-        die('FATAL ERROR: socket_create() : " '.socket_strerror($socket).' "');
-}
- 
-if (socket_connect($socket,gethostbyname($name),80) < 0){
-        die('FATAL ERROR: socket_connect()');
-}
- 
-//***************
-// Envoi demande
-//***************
-if(($int = socket_write($socket, $envoi, strlen($envoi))) === false){
-        die('FATAL ERROR: socket_write() failed, '.$int.' characters written');
-}
+$adresseIP = "192.168.1.17";
 
- 
-//******************
-// Lecture réponse
-//******************
-$reception = '';
-while($buff = socket_read($socket, 2000)){
-   $reception.=$buff;
-}
-echo $reception;
-/*/lecture réponse*/
+$requeteHTTP = creerRequete($adresseIP);
+
+$socket = creerSocket($adresseIP);
+
+$réponse = getReponse($socket);
  
 socket_close($socket);
+
+echo $réponse;
 
 ?>
