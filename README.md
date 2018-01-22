@@ -10,6 +10,12 @@ Sauvegarde des données dans la base de données avec ajout de la date et d'un I
 La carte Raspberry lance un programme en C lorsqu'elle s'allume.
 Ce programme lance lui même le script PHP qui récupère les mesures puis les enregistre dans la base de données.
 
+# Programmes
+Deux possibilités :
+
+- Programmes en c pour récupérer les trames : `main.c`, `fonctions.c`, `fonctions.h`.
+- Programmes en PHP pour récupérer les trames et les enregistrer sur la base de données : `requeteStationMeteo.php`,`fonctions.php`, `bdd/bddconnect.php`.
+
 # Ressources
 - Raspberry Pi serveur.
 - Station Météo avec SHIELD Ethernet.
