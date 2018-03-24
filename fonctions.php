@@ -93,5 +93,22 @@ function extraireTrame($réponse){
   	return $trame;
 }
 
+//*****************************************************************************************************************
+// Fonction permettant de compter un certain nombre de secondes avant d'effectuer une action
+//*****************************************************************************************************************
+// function timer($sec) 
+//*****************************************************************************************************************
+// $sec : Le nombre de secondes à compter
+//*****************************************************************************************************************
+function timer($sec) 
+{	
+	// On stocke la date en secondes au début de la fonction
+	$now = date('U'); 
+
+	// On ajoute le nombre de secondes à la date de début puis on attend qu'elle soit égale à la date actuelle
+	// Cela équivaut à attendre le nombre de secondes voulues
+	while ($now + $sec >= date('U')){}
+}
+
 
 ?>

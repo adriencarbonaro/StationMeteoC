@@ -1,5 +1,5 @@
 //*****************************************************************************************************************
-// Requete HTTP en C - Rev 2.0
+// Requete HTTP en C - Rev 2.1
 //*****************************************************************************************************************
 // Fichiers :  - main.c
 //             - fonctions.h
@@ -36,8 +36,10 @@
 // Rev 2.0 :   - Boucle infinie toute les 5 minutes
 //             - Tout le travail sur la requete se fait ensuite dans le fichier index.php
 //*****************************************************************************************************************
+// Rev 2.1 :   - Boucle infinie toutes les 15 minutes pour éviter la surcharge en octets
+//*****************************************************************************************************************
 // Auteur      : Adrien CARBONARO
-// Mise à jour : 10/02/2018 - 22:38
+// Mise à jour : 24/03/2018 - 18:14
 //*****************************************************************************************************************
 
 // Fichier contenant tous les prototypes de fonctions
@@ -51,6 +53,7 @@ int main(int argc, char const *argv[])
 {
    while(1){
       connection();
-      sleep(300);
+      /* 900 secondes = 15 min */
+      sleep(900); 
    }
 }

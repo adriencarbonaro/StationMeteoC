@@ -13,7 +13,7 @@
 
 //*** Defines ***//
 #define PORT 80
-#define HOST "192.168.1.163"
+#define HOST "192.168.1.105"
 #define FICHIER "index.php"
 
 //*** Structs ***//
